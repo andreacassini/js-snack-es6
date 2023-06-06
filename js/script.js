@@ -101,3 +101,66 @@ bikes.forEach ((element) => {
 let {brand, weight} = lightBike;
 
 console.log(`La bici piu' leggera e' la ${brand} e pesa solo ${weight} Kg`);
+
+//SNACK 4
+//Creare un array di oggetti di squadre di calcio.
+//Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+//Nome sarà l'unica proprietà da compilare, le altre saranno tutte settate a 0.
+//Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+//Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+
+
+//CREO ARRAY DI OGGETTI DI SQUADRE DI CALCIO
+const squadre = [
+    {
+        nome:'Juventus',
+        punti_fatti: 0,
+        falli_subiti: 0
+    },
+    {
+        nome:'Milan',
+        punti_fatti: 0,
+        falli_subiti: 0
+    },
+    {
+        nome:'Inter',
+        punti_fatti: 0,
+        falli_subiti: 0
+    },
+    {
+        nome:'Lazio',
+        punti_fatti: 0,
+        falli_subiti: 0
+    }
+]
+
+//STAMPO A VIDEO ARRAY DI OGGETTI
+//console.log(squadre);
+
+
+//CICLO L'ARRAY E INVOCO FUNZIONE generateRandomNumber
+squadre.forEach((element) => { 
+    element.punti_fatti = generateRandomNumber(1,10);
+    element.falli_subiti = generateRandomNumber(1,10);
+})
+
+console.log(squadre)
+//CREO FUNZIONE RANDOM PER ANDARE A SOSTITUIRE GLI 0 IN punti_fatti E falli_subiti
+function generateRandomNumber(min, max) {
+   return Math.floor(Math.random() * (max - min + 1) - min);
+}
+
+//CREO NUOVO ARRAY DESTRUTTURATO CON ELEMENTI : nome, falli_subiti
+const newTeams =[];
+for(let i=0; i<squadre.length; i++){
+    let squadreAggiornate = squadre[i];
+
+    const {nome, falli_subiti} = squadreAggiornate;
+
+    let obj = {nome, falli_subiti};
+
+    newTeams.push(obj);
+}
+
+//STAMPO IN CONSOLE
+console.log(newTeams);
