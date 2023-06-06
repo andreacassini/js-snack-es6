@@ -55,3 +55,49 @@ const super_students = students.filter((student) => student.grades > 70);
 console.log(super_students)
 const ultra_students = students.filter((student) => student.grades > 70 && student.id > 120)
 console.log(ultra_students)
+
+//SNACK 3
+//Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+//Stampare in console la bici con peso minore utilizzando destructuring e template literal
+
+//Creare un array di oggetti:
+const bikes = [
+    {
+        brand:'Specialized',
+        weight: 10
+    },
+    {
+        brand:'Bianchi',
+        weight: 11
+    },
+    {
+        brand:'Trek',
+        weight: 9.5
+    },
+    {
+        brand:'Cube',
+        weight: 11
+    },
+    {
+        brand:'Giant',
+        weight: 9
+    },
+]
+
+//PRENDO COME PARAGONE LA PRIMA BICI DELL'ARRAY
+let lightBike = bikes[0];
+
+//CREO ARRAY PER VERIFICARE UNO AD UNO IL PESO
+bikes.forEach ((element) => {
+    if(element.weight < lightBike.weight){
+        lightBike = element;
+    }
+});
+
+//STAMPO A CONSOLE
+//console.log(lightBike);
+
+//STAMPO A CONSOLE CON DESTRUCTURING E TEMPLATE LITERAL
+let {brand, weight} = lightBike;
+
+console.log(`La bici piu' leggera e' la ${brand} e pesa solo ${weight} Kg`);
