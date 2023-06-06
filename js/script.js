@@ -1,3 +1,15 @@
+//SNACK 1
+
+//ARRAY INIZIALE
+const guests = [ 'Brad Pitt', 'Johnny Depp', 'Lady Gaga', 'Cristiano Ronaldo', 'Georgina Rodriguez', 'Chiara Ferragni', 'Fedez', 'George Clooney', 'Amal Clooney', 'Maneskin'] 
+
+//OBJECT table
+const table = guests.map((guest, i) => {
+    return {'table_name': 'Tavolo Vip', 'guest': guest, 'seat': i}
+})
+
+console.log(table);
+
 //SNACK 2
 const students = [
     {
